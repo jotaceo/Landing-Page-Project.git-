@@ -82,14 +82,13 @@ function addNewSection(){
     };
     // If we have "green light" the we proceed to create and append the new section
     if (canWeCreateASection == true) {
-        console.log("Yes we can create a section!"); // delete this <<<<< EYES
         // creates a new section
         let newSection = document.createElement('section');
-        var sections = document.querySelectorAll('section');
+        let sections = document.querySelectorAll('section');
         // It get sure we are adding the section after the last section already in the main container
         sections[sections.length -1].parentNode.insertBefore(newSection, sections[sections.length -1].nextSibling);
         // count again the sections
-        var sections = document.querySelectorAll('section');
+        sections = document.querySelectorAll('section');
         // sets the string for id value
         let idValue = "section" + sections.length;
         // sets the string for data type value
@@ -111,20 +110,18 @@ function addNewSection(){
         theDiv.appendChild(newH2);
         // We are going to recicle dataType to set the textContent because in this case is the same
         newH2.textContent = dataType;
-
-        // I'm going to use a function because "we need TWO paragraphs"
-        function createAParagraph() {
-            // creates a paragraph -- we need two of this
-            let newP = document.createElement('p');
-            // add a new paragraph
-            theDiv.appendChild(newP);
-        }
-        createAParagraph()
-        createAParagraph()
-
-
-
-        console.log(sections);
+        // creates a first paragraph 
+        const newP1 = document.createElement('p');
+        // set a textContent
+        newP1.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.';
+        // add a new paragraph
+        theDiv.appendChild(newP1);
+        // creates a second paragraph
+        const newP2 = document.createElement('p');
+        // set a textContent
+        newP2.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.';
+        // add a new paragraph
+        theDiv.appendChild(newP2);
     }
 }
 
