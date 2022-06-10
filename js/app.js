@@ -22,7 +22,8 @@
  * Define Global Variables
  * 
 */
-
+let sections = document.querySelectorAll('section');
+let dataType = "Section " + sections.length;
 
 /**
  * End Global Variables
@@ -37,26 +38,6 @@
  * Begin Main Functions
  * 
 */
-
-
-// build the nav
-
-// select the menu
-const menu = document.querySelector('#navbar__list');
-
-// creates links in the menu
-const menuItem = document.createElement('li');
-
-// select all sections
-var sections = document.querySelectorAll('section');
-
-let menuLink = menu.appendChild(menuItem);
-
-// Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
 
 // build fourth section
 function addNewSection(){
@@ -84,10 +65,9 @@ function addNewSection(){
     if (canWeCreateASection == true) {
         // creates a new section
         let newSection = document.createElement('section');
-        let sections = document.querySelectorAll('section');
         // It get sure we are adding the section after the last section already in the main container
         sections[sections.length -1].parentNode.insertBefore(newSection, sections[sections.length -1].nextSibling);
-        // count again the sections
+        // count again the sections to help capture the last child of them
         sections = document.querySelectorAll('section');
         // sets the string for id value
         let idValue = "section" + sections.length;
@@ -108,7 +88,7 @@ function addNewSection(){
         let newH2 = document.createElement('h2');
         // adds a H2 element to the div
         theDiv.appendChild(newH2);
-        // We are going to recicle dataType to set the textContent because in this case is the same
+        // We are going to use dataType to set the textContent
         newH2.textContent = dataType;
         // creates a first paragraph 
         const newP1 = document.createElement('p');
@@ -124,9 +104,42 @@ function addNewSection(){
         theDiv.appendChild(newP2);
     }
 }
-
 addNewSection();
 
+
+// build the nav
+// select the unordered list for the menu
+const menuUl = document.querySelector('#navbar__list');
+
+// Function to create links in the menu
+function createLink() {
+    // testing loop
+    for (const section of sections) {
+        console.log(section);
+        // creates links in the menu
+        const menuLi = document.createElement('li');
+        // add class to the li
+        menuLi.classList.add('menu__link');
+        // sets the string for data type value and textContent
+        let sectionTitle = section.getAttribute('data-nav');
+        // add attribute data-nav
+        menuLi.setAttribute('data-nav', sectionTitle);
+        // add textContent
+        menuLi.textContent = `${sectionTitle}`;
+
+
+
+        // add li on the unordered list
+        menuUl.appendChild(menuLi);
+        
+        
+    };    
+};
+createLink();
+
+// Add class 'active' to section when near top of viewport
+
+// Scroll to anchor ID using scrollTO event
 
 /**
  * End Main Functions
