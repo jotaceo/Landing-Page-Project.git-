@@ -23,7 +23,8 @@
  * 
 */
 let sections = document.querySelectorAll('section');
-let dataType = "Section " + sections.length;
+let dataType = 'Section ' + sections.length;
+var sectionId = '';
 
 /**
  * End Global Variables
@@ -99,7 +100,7 @@ function addNewSection(){
         // creates a second paragraph
         const newP2 = document.createElement('p');
         // set a textContent
-        newP2.textContent = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi fermentum metus faucibus lectus pharetra dapibus. Suspendisse potenti. Aenean aliquam elementum mi, ac euismod augue. Donec eget lacinia ex. Phasellus imperdiet porta orci eget mollis. Sed convallis sollicitudin mauris ac tincidunt. Donec bibendum, nulla eget bibendum consectetur, sem nisi aliquam leo, ut pulvinar quam nunc eu augue. Pellentesque maximus imperdiet elit a pharetra. Duis lectus mi, aliquam in mi quis, aliquam porttitor lacus. Morbi a tincidunt felis. Sed leo nunc, pharetra et elementum non, faucibus vitae elit. Integer nec libero venenatis libero ultricies molestie semper in tellus. Sed congue et odio sed euismod.';
+        newP2.textContent = 'Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.';
         // add a new paragraph
         theDiv.appendChild(newP2);
     }
@@ -114,8 +115,7 @@ const menuUl = document.querySelector('#navbar__list');
 // Function to create links in the menu
 function createLink() {
     // testing loop
-    for (const section of sections) {
-        console.log(section);
+    for (let section of sections) {
         // creates links in the menu
         const menuLi = document.createElement('li');
         // add class to the li
@@ -125,12 +125,34 @@ function createLink() {
         // add attribute data-nav
         menuLi.setAttribute('data-nav', sectionTitle);
         // add textContent
-        menuLi.textContent = `${sectionTitle}`;
+        menuLi.innerHTML = `${sectionTitle}`;
+
+        // Scroll to anchor ID using scrollTO event
+        // Set element by id
+        sectionId = section.getAttribute('id');
+        let scrollToId = document.getElementById(sectionId)
+        console.log(scrollToId);
+
+        function goToSection() {
+            scrollToId.scrollIntoView({behavior: "smooth"});
+            for (section of sections) {
+                section.classList.remove('your-active-class');
+                console.log(section);
+
+            }
+            
+
+            scrollToId.classList.toggle('your-active-class');
+        }
+
+        // if a li is clicked, the page will scroll to a section
+        menuLi.addEventListener('click', goToSection);
+        
 
 
 
         // add li on the unordered list
-        menuUl.appendChild(menuLi);
+        menuUl.append(menuLi);
         
         
     };    
@@ -139,7 +161,7 @@ createLink();
 
 // Add class 'active' to section when near top of viewport
 
-// Scroll to anchor ID using scrollTO event
+
 
 /**
  * End Main Functions
