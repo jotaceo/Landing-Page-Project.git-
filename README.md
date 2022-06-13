@@ -6,18 +6,18 @@ For this project, you will be writing most of your code in js/app.js. Note that 
 
 Feel free to implement your own design workflow, but if you get stuck -- here is a walkthrough to get you up and running!
 
-Rubric Tip: All the points mentioned below will help you to satisfy the criteria for the project rubric. Please make sure to re-review the rubric for detailed project requirements prior to submission.
+**Rubric Tip**: All the points mentioned below will help you to satisfy the criteria for the project rubric. Please make sure to re-review the rubric for detailed project requirements prior to submission.
 
-Start by linking your app.js. where should this file go based on your present knowledge? We’ll test some other locations later.
-Build out your HTML and at least 4 content sections. The rest of your functionality relies on these sections.
-Take a quick look at all the HTML elements in index.html. Note the values for their id, class, and data attributes. To manipulate the DOM, you'll be using many of the tools and methods you've learned on these elements (and on those that you will create).
-For a refresher on the data attribute, visit here.
-Which data structure can you use to store these sections? This data structure can represent all sections for your page, so it might be a good idea to save it to a variable.
-How you would iterate (i.e., loop) over this data structure?
-Think about how you can create, say, an unordered list (i.e., bulleted list) in HTML from this structure, and where you be placing that list.
-Think about how you’ll test whether a section is in the viewport.
-What actions are you performing that will cause interactivity with the DOM?
-Build the navigation menu. This will dynamically create a navigation menu based on the sections of the page. This can be a particularly useful trick when you begin working with content management systems or APIs when you are uncertain of where the items will be.
+1. **Start by linking your app.js**. where should this file go based on your present knowledge? We’ll test some other locations later.
+2. **Build out your HTML and at least 4 content sections**. The rest of your functionality relies on these sections.
+* Take a quick look at all the HTML elements in index.html. Note the values for their id, class, and data attributes. To manipulate the DOM, you'll be using many of the tools and methods you've learned on these elements (and on those that you will create).
+    * For a refresher on the data attribute, visit here.
+* Which data structure can you use to store these sections? This data structure can represent all sections for your page, so it might be a good idea to save it to a variable.
+* How you would iterate (i.e., loop) over this data structure?
+* Think about how you can create, say, an unordered list (i.e., bulleted list) in HTML from this structure, and where you be placing that list.
+* Think about how you’ll test whether a section is in the viewport.
+* What actions are you performing that will cause interactivity with the DOM?
+3. Build the navigation menu. This will dynamically create a navigation menu based on the sections of the page. This can be a particularly useful trick when you begin working with content management systems or APIs when you are uncertain of where the items will be.
 Are you listening for an event for the navigation to build?
 Where are you placing the navigation?
 Where is the text for each navigation item coming from and where are you anchoring to?
