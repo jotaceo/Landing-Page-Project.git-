@@ -116,6 +116,21 @@ section {
     text-align: left;
 }
 
+/* Scroll to top button */
+.scroll__top {
+    position: fixed;
+    bottom: 10vh;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: #00000036;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: xxx-large;
+}
+
 @media only screen and (min-width: 35em){
     .landing__container {
         max-width: 50em;
@@ -220,4 +235,28 @@ section.your-active-class .landing__container::after {
 		           translate(-1em) 
 		           rotate(-360deg);
 	}
+}
+
+@media only screen and (max-width: 414px) {
+    li.menu__link {
+        font-size: .85em;
+    };    
+}
+
+@media only screen and (max-width: 352px) {
+    li.menu__link {
+        font-size: .77em;
+    };    
+}
+
+@media only screen and (max-width: 351px) {
+    li.menu__link {
+        font-size: .73em;
+    };    
+}
+
+@media only screen and (max-width: 303px) {
+    li.menu__link {
+        font-size: .70em;
+    };    
 }

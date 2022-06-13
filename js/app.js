@@ -24,6 +24,9 @@
 */
 let sections = document.querySelectorAll('section');
 let dataType = 'Section ' + sections.length;
+// Used to iterate in the setVieportActive function
+let i = 0;
+let = sectionInTheZone = "";
 var sectionId = '';
 
 /**
@@ -32,7 +35,7 @@ var sectionId = '';
  * 
 */
 
-
+// <<< I think I should have created a funtion for a for loop to "sections" >>>
 
 /**
  * End Helper Functions
@@ -59,9 +62,10 @@ function addNewSection(){
             // get sure we have a section in the main element
             if (mainNode.nodeName == 'SECTION') {
                 canWeCreateASection = true;
-            }
-        }
+            };
+        };
     };
+ 
     // If we have "green light" the we proceed to create and append the new section
     if (canWeCreateASection == true) {
         // creates a new section
@@ -103,10 +107,9 @@ function addNewSection(){
         newP2.textContent = 'Aliquam a convallis justo. Vivamus venenatis, erat eget pulvinar gravida, ipsum lacus aliquet velit, vel luctus diam ipsum a diam. Cras eu tincidunt arcu, vitae rhoncus purus. Vestibulum fermentum consectetur porttitor. Suspendisse imperdiet porttitor tortor, eget elementum tortor mollis non.';
         // add a new paragraph
         theDiv.appendChild(newP2);
-    }
+    };
 }
 addNewSection();
-
 
 // build the nav
 // select the unordered list for the menu
@@ -130,49 +133,67 @@ function createLink() {
         // Scroll to anchor ID using scrollTO event
         // Set element by id
         sectionId = section.getAttribute('id');
-        let scrollToId = document.getElementById(sectionId)
-        console.log(scrollToId);
+        let scrollToId = document.getElementById(sectionId);
 
+        // Scroll to section on link click
         function goToSection() {
             scrollToId.scrollIntoView({behavior: "smooth"});
             for (section of sections) {
                 section.classList.remove('your-active-class');
-                console.log(section);
-
-            }
-            
-
-            scrollToId.classList.toggle('your-active-class');
-        }
-
+            };
+            // Set sections as active
+            scrollToId.classList.add('your-active-class');
+        };
         // if a li is clicked, the page will scroll to a section
         menuLi.addEventListener('click', goToSection);
-        
-
-
-
-        // add li on the unordered list
-        menuUl.append(menuLi);
-        
-        
-    };    
+        // add li on the unordered list using Append
+        menuUl.append(menuLi);        
+    };
 };
 createLink();
 
 // Add class 'active' to section when near top of viewport
+for (const section of sections) {
+    sections[i].classList.remove('your-active-class');
+};
+    window.onscroll = setViewportActivate;
+    function setViewportActivate() {
+        console.clear();
+        for (const section of sections) {
+            console.log(i);
+            let sectionDomRect = sections[i].getBoundingClientRect();
+            console.log(sectionDomRect.top);
+            console.log(sectionDomRect.bottom);
 
+            if (sectionDomRect.top > 400) {
+
+                console.log('top out of view');
+                sections[i].classList.remove('your-active-class');
+            };
+            // Set sections as active
+            if (sectionDomRect.top < 525) {
+                console.log(sectionInTheZone);
+                console.log(sections[i]);
+                sections[i].classList.add('your-active-class');
+
+            };
+
+            if (sectionDomRect.bottom < 525) {
+                console.log('top out of view');
+                sections[i].classList.remove('your-active-class');
+            };
+
+            i++;
+
+            if (i > 3) {
+                i = 0;
+            };
+        };
+    };    
+    setViewportActivate();
 
 
 /**
  * End Main Functions
- * Begin Events
  * 
 */
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
-
-
