@@ -5,7 +5,36 @@
 2. Landing Page BJehavior
 3. Documentation 
 
-* [Instructions](#instructions)
+## Requisites:
+
+### Interface and Architcture
+
+* CRITERIA
+MEETS SPECIFICATIONS
+Architecture
+
+The project should have a structure like the one shown below. All files shown must be present and the app must successfully render a home page with clear design and functionality added when index.html is loaded in the browser. No errors should display in console.
+
+css
+- styles.css    
+index.html
+js
+- app.js
+README.md
+Usability
+
+All features are usable across modern desktop, tablet, and phone browsers.
+A Responsive layout of the landing page should be created to use across all devices.
+Make sure that the navigation bar is responsive too across all these devices.
+Responsiveness can be verified by inspecting the landing page using the Developer Tools option on Google Chrome Browser.
+Styling
+
+Styling should be added for active states.
+Set CSS class active state when the element is in the viewport.
+The active section in the Navbar should be highlighted.
+HTML Structure
+
+There are at least 4 sections that have been added to the page.
 
 ## Instructions
 
