@@ -2,8 +2,8 @@
  *
  * CSS written based on SMACSS architecture.
  * To learn more, visit: http://smacss.com/
- * 
- * For simplicity, no reset or normalize is added. 
+ *
+ * For simplicity, no reset or normalize is added.
  * To learn more, visit: https://css-tricks.com/reboot-resets-reasoning/
  *
 */
@@ -82,7 +82,7 @@ section {
     color: #000;
 }
 
-.navbar__menu .menu__link:hover {
+.navbar__menu .menu__link:hover, .navbar__menu .nav-highlighted {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
@@ -141,7 +141,7 @@ section {
 section:nth-of-type(even) .landing__container {
     margin-right: 0;
     margin-left: auto;
-    text-align: right; 
+    text-align: right;
 }
 
 /* Background Circles */
@@ -232,7 +232,7 @@ section.your-active-class .landing__container::after {
 	}
 	to {
 		transform: rotate(360deg)
-		           translate(-1em) 
+		           translate(-1em)
 		           rotate(-360deg);
 	}
 }
@@ -240,23 +240,23 @@ section.your-active-class .landing__container::after {
 @media only screen and (max-width: 414px) {
     li.menu__link {
         font-size: .85em;
-    };    
+    };
 }
 
 @media only screen and (max-width: 352px) {
     li.menu__link {
         font-size: .77em;
-    };    
+    };
 }
 
 @media only screen and (max-width: 351px) {
     li.menu__link {
         font-size: .73em;
-    };    
+    };
 }
 
 @media only screen and (max-width: 303px) {
     li.menu__link {
         font-size: .70em;
-    };    
+    };
 }
