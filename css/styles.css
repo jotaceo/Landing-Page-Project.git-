@@ -82,7 +82,7 @@ section {
     color: #000;
 }
 
-.navbar__menu .menu__link:hover, .navbar__menu .nav-highlighted {
+.navbar__menu .nav-highlighted {
     background: #333;
     color: #fff;
     transition: ease 0.3s all;
@@ -235,6 +235,14 @@ section.your-active-class .landing__container::after {
 		           translate(-1em)
 		           rotate(-360deg);
 	}
+}
+
+@media(hover: hover) {
+    .navbar__menu .menu__link:hover {
+        background: #333;
+        color: #fff;
+        transition: ease 0.3s all;
+    }
 }
 
 @media only screen and (max-width: 840px) {
